@@ -1,9 +1,9 @@
 <template>
   <div class="card" ref="cardContainer">
-    <div class="card-body">
+    <div class="card-header">
       <InputText ref="inputText" type="text" id="date-range" v-model="value" @focus="showCard" />
     </div>
-    <div class="card-header" v-show="showCalendar">
+    <div class="card-body" v-show="showCalendar">
       <!-- Grupo de botones -->
       <div class="header-content">
         <BotonesGrupo ref="selectbutton" @clickButton="handleButtonClick" />
@@ -59,7 +59,8 @@ export default {
     showCard() {
       this.showCalendar = true;
     },
-    hideCard() {
+    hideCard(e) {
+      e.preventDefault()
       this.showCalendar = false;
     },
     handleButtonClick(numero) {
@@ -140,7 +141,7 @@ export default {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   overflow: hidden;
-  width: fit-content; /* Ajusta el ancho automáticamente al contenido */
+  width: 100%; /* Ajusta el ancho automáticamente al contenido */
 }
 
 .card-header {
@@ -151,6 +152,7 @@ export default {
 
 .card-body {
   padding: 20px;
+  text-align: center;
 }
 
 .header-content {
@@ -175,5 +177,12 @@ export default {
   background-color: #ffeb3b !important;
   color: #000 !important;
   border-radius: 50%;
+}
+
+.p-inputtext{
+  width: 100%;
+}
+.p-selectbutton{
+  margin-left: auto;
 }
 </style>

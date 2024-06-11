@@ -17,12 +17,14 @@ export default {
         { value: 3 },
         { value: 4 },
         { value: 5 },
-        { value: 7 }
+        { value: 7 },
+        { value: 15 }
       ]
     };
   },
   methods: {
     handleButtonChange(event) {
+      event.preventDefault();
       const number = event.target.getAttribute('data-value');
       this.$emit('clickButton', number);
     },
