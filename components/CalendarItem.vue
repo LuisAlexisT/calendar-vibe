@@ -25,9 +25,9 @@
   </div>
 </template>
 <script>
-// import Calendar from 'primevue/calendar';
-// import BotonesGrupo from './ButtonsGroup.vue';
-// import InputText from 'primevue/inputtext';
+import Calendar from 'primevue/calendar';
+import BotonesGrupo from './ButtonsGroup.vue';
+import InputText from 'primevue/inputtext';
 
 function parseDateString(dateString) {
   const [day, month, year] = dateString.split('/').map(Number);
